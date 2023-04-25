@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav>
+    <div class="logo">
+        <img src="img/Uni_logo.png" alt="Your Logo">
+
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#ase">ASE</a></li>
+            <li><a href="index.html" onclick="openPage()">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- Slider-->
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+
+        <img src="img/S-1.png" alt="pic 1" style="width:100%">
+        <div class="text">Sample Slide Text</div>
+    </div>
+
+    <div class="mySlides fade">
+
+        <img src="img/S-2.png" alt="pic 2" style="width:100%">
+        <div class="text">Sample Slide Text</div>
+    </div>
+
+    <div class="mySlides fade">
+
+        <img src="img/S-3.png" alt="pic 3" style="width:100%">
+        <div class="text">Sample Slide Text</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div> <!--slide end-->
+
+<main>
+    <div class="container">
+        <div class="col-ms-12">
+
+        </div>
+
+    </div>
+</main>
+<div class="container">
+    <div class="col-ms-6">
+        <p class="paragraph1">RAO SHAKEEL AHAMD WALE</p>
+    </div>
+    <div class="col-ms-6 asad">
+        <p class="paragraph1">ASAD QAISER ALI KHAN CHD</p>
+    </div>
+</div>
+<br>
+<br>
+<div>
+    <button class="my-button " onclick="openPage()">BACK</button>
+</div>
+<br>
+<footer>
+    <p>&copy; 2023 My Website</p>
+</footer>
+
+<script>
+    function openPage() {
+        window.location.href = "index.html";
+    }
+</script>
+<!--slider script-->
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+</body>
+</html>
